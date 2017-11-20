@@ -1,0 +1,406 @@
+.wp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.page {
+    font-size: 72px;
+    /*line-height: 320px;*/
+    text-align: center;
+    /*padding: 0 20px;*/
+    /*background-size: auto 100%;*/
+}
+
+.page .img-button {
+    /*width: 95%;*/
+    /*height: 100%;*/
+    /*margin: 0 auto;*/
+}
+
+.page1 {
+    background: url("/img/wx/01.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+
+/*.page2{
+    background: url("/img/wx/02.png") no-repeat center;
+    background-size: auto 100%;
+}*/
+
+.page3 {
+    background: url("/img/wx/03.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+.page4 {
+    background: url("/img/wx/04.png") no-repeat center;
+    background-size: auto 100%;
+    /*background-size: cover;*/
+}
+
+.page5 {
+    background: url("/img/wx/05.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+.page6 {
+    background: url("/img/wx/06.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+.page7 {
+    background: url("/img/wx/07.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+.page8 {
+    background: url("/img/wx/08.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+.page9 {
+    background: url("/img/wx/09.png") no-repeat center;
+    background-size: auto 100%;
+    /*background-size: cover;*/
+}
+
+.page10 {
+    background: url("/img/wx/10.png") no-repeat center;
+    background-size: auto 100%;
+    /*background-size: cover;*/
+}
+
+.page11 {
+    background: url("/img/wx/11.png") no-repeat center;
+    background-size: auto 100%;
+    /*background-size: cover;*/
+}
+
+.page12 {
+    background: url("/img/wx/12.png") no-repeat center;
+    background-size: auto 100%;
+    /*background-size: cover;*/
+}
+
+.page13 {
+    background: url("/img/wx/13.png") no-repeat center;
+    background-size: auto 100%;
+}
+
+.page13 img {
+    /*width: 100%;*/
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
+
+
+/* 箭头 */
+
+@-webkit-keyframes start {
+    0%,
+    30% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, 10px);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, -5px);
+    }
+}
+
+@keyframes start {
+    0%,
+    30% {
+        opacity: 0.2;
+        transform: translate(0, 10px);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0.2;
+        transform: translate(0, -5px);
+    }
+}
+
+
+/* 加油 */
+
+@-webkit-keyframes share {
+    /*0%,30% {
+        opacity: 0.2;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }*/
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+@keyframes share {
+    /* 0%,30% {
+        opacity: 0.2;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }*/
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+.start {
+    position: fixed;
+    left: 50%;
+    margin-left: -17px;
+    top: 95%;
+    margin-top: -34px;
+    width: 34px;
+    height: 34px;
+}
+
+.start b {
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    margin-left: -9px;
+    width: 19px;
+    height: 12px;
+    background: url(/img/wx/arrow.png);
+    background-size: 100% 100%;
+    -webkit-animation: start 1.5s infinite ease-in-out;
+    animation: start 1.5s infinite ease-in-out;
+}
+
+.share {
+    position: absolute;
+    z-index: 10000;
+    bottom: 10px;
+    right: 10px;
+    width: 80px;
+    height: 80px;
+    background: url("/img/wx/share.png");
+    background-size: cover;
+    -webkit-animation: share 3.5s infinite ease-in-out;
+    animation: share 3.5s infinite ease-in-out;
+}
+
+.ui-dialog {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 10001;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#share-tip-dialog {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.share-tip-content {
+    width: 80%;
+    text-align: center;
+    color: white;
+    margin: 40% auto;
+}
+
+.big {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.small {
+    font-size: 10px;
+    /*color: #30B7F7;*/
+    color: #F5BF35;
+}
+
+.modal-in {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0)
+}
+
+.modal-out {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0)
+}
+
+.share-content {
+    -webkit-transition: all ease 200ms;
+    transition: all ease 200ms;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.container {
+    position: relative;
+    width: 900px;
+    height: 800px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+#phone-wrap {
+    position: absolute;
+    width: 318px;
+    height: 666px;
+    background: url("/img/wx/phone.png");
+    background-size: cover;
+}
+
+.placeholder {
+    position: absolute;
+    left: 23px;
+    top: 93px;
+    width: 273px;
+    height: 480px;
+    z-index: 1;
+    background: white;
+}
+
+.pic,.placeholder{
+    position: absolute;
+    left: 45px;
+    top: 107px;
+    width: 254px;
+    height: 446px;
+    z-index: 2;
+}
+.pic{
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.8s;
+    -moz-transition: opacity 0.8s;
+    -ms-transition: opacity 0.8s;
+    -o-transition: opacity 0.8s;
+}
+.slide-on {
+    opacity: 1;
+    -webkit-transition: opacity 0.8s;
+    -moz-transition: opacity 0.8s;
+    -ms-transition: opacity 0.8s;
+    -o-transition: opacity 0.8s
+}
+#company-block {
+    position: absolute;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+#company-link {
+    line-height: 100px;
+    color: white;
+    text-decoration: none;
+}
+.detail-content{
+    position: absolute;
+    top: 120px;
+    right: 50px;
+    /*color: white;*/
+    color:#000;
+    text-align: left;
+}
+.intro-title{
+    padding-left: 40px;
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+.intro{
+    text-align: left;
+    text-decoration: none;
+    list-style: none;
+    font-size: 25px;
+}
+.qr{
+    position: absolute;
+    margin-left: 40px;
+    width: 200px;
+    height: 200px;
+    background:url("/img/wx/weixin_qr.jpg");
+    background-size: cover; 
+}
+.intro li{
+    padding: 2px;
+    /*word-spacing:8px; */
+    letter-spacing: 4px
+}
+.qr-tip{
+    position: absolute;
+    top: 440px;
+    margin-left: 60px;
+}
+.share-show-content{
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    border-radius: 20px;
+    top:50%;
+    left:50%;
+    margin-top: -130px;
+    margin-left: -130px;
+    background-color: white;
+    padding:10px;
+    text-align: center;
+}
+.share-text{
+    color:#F5BF35;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+.share-text:first-child{
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+.share-logo{
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin:10px auto;  
+}
+.pic-time{
+    position: absolute;
+    top:310px;
+    left:97px;
+    z-index: 10000;
+}
+
+.ui-loading-wrap{display:-webkit-box;-webkit-box-pack:center;-webkit-box-align:center;text-align:center;height:40px}.ui-loading{width:20px;height:20px;display:block;background:url(/img/loading_sprite.png);-webkit-background-size:auto 20px;-webkit-animation:am-rotate 1s steps(12) infinite}.ui-loading-bright{width:37px;height:37px;display:block;background-image:url(../img/loading_sprite_white.png);-webkit-background-size:auto 37px;-webkit-animation:am-rotate2 1s steps(12) infinite}.ui-loading-wrap .ui-loading{margin:10px}.ui-loading-block{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-pack:center;-webkit-box-align:center;background:rgba(0,0,0,.4);display:none;background:transparent}.ui-loading-block .ui-loading-cnt{width:130px;height:110px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:center;text-align:center;background:rgba(0,0,0,.65);border-radius:6px;color:#fff;font-size:16px}.ui-loading-block .ui-loading-bright{margin:18px 0 8px}.ui-loading-block.show{display:-webkit-box;display:box}@-webkit-keyframes am-rotate{from{background-position:0 0}to{background-position:-240px 0}}@-webkit-keyframes am-rotate2{from{background-position:0 0}to{background-position:-444px 0}}

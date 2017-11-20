@@ -1,0 +1,674 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+  <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name='description', content='成都智慧享应科技|让生活变得更简单'>
+    <meta name='keywords', content='成都智慧享应科技,享应,享应科技,智慧享应科技,美食,问我,cherry,享用插件,pcs,发现身边美食,旅游,餐饮,吃货,美食推荐,成都美食'>
+    <meta name='author', content='曲奇先生'>
+    <!-- <link rel="icon" type="image/x-icon" href="/img/company_logo.png" media="screen"> -->
+    <title>成都智慧享应科技有限公司|让生活变得更简单</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/particles.css">
+    <link href='//cdn.webfont.youziku.com/webfonts/nomal/11252/19505/57e79ca9f629d812e893b975.css' rel='stylesheet' type='text/css' />
+    <link href="css/main.min.css" rel="stylesheet">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1474797684_2646039.css">
+    <meta name="baidu-site-verification" content="QrvsTHF1hw" />
+  </head>
+  <style>
+    body{
+      overflow: hidden;
+      height: 100%;
+      overflow-x:hidden !important; 
+    }
+    /*.logo {
+      margin: 0 auto;
+      margin-top: -20%;
+    }*/
+    .logo img{
+      width: 60%;
+    }
+    .wenwo-content{
+      position: absolute;
+      z-index: 500;
+      width: 100%;
+      height: 100%;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      transition:0.5s linear all;
+      -webkit-transition: 0.5s linear all;
+    }
+    .products-li-content,.products-content{
+      position: absolute;
+      z-index: 500;
+      width: 100%;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      transition:0.5s linear all;
+      -webkit-transition: 0.5s linear all;
+    }
+    .wenwo-content-right{
+      position: absolute;
+      z-index: 4000;
+      top:50%;
+      left:50%;
+      transform: translate(500%,-50%);
+      text-align: center;
+      -webkit-transition: all ease 500ms;
+      transition: all ease 500ms;
+      width: 12rem;
+    }
+    .logo{
+      height: 9rem;
+    }
+    .products-li{
+      padding:5rem;
+    }
+    .wenwo-text{
+      position: absolute;
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+
+      color: #f88827;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Open Sans',sans-serif;
+      top:50%;
+      transform: translateY(-50%);
+    }
+    .wenwo-down,.wenwo-wechat{
+      position: absolute;
+      z-index: 5000;
+      width: 10rem;
+      height: 2.5rem;
+      border-radius: .4rem;
+      text-align: center;
+      line-height: 2.5rem;
+      background-color: #f88827;
+      color: white;
+      font-size: 1rem;
+      bottom:2rem;
+      left:50%;
+      transform: translateX(-50%);
+      -webkit-transition: all ease 500ms;
+      transition: all ease 500ms;
+    }
+    .android{
+      position: absolute;
+      z-index: 5000;
+      color: #f88827;
+      font-size: 1rem;
+      top:1rem;
+      left:1rem;
+    }
+    .ios{
+      background-color: #ccc;
+      font-size: .9rem;
+    }
+    .wenwo-wechat{
+      display: none;
+      bottom:5rem;
+      background: #3eb94e;
+    }
+    .wenwo-input{
+      margin-top: 1rem;
+      width: 100%;
+      border-radius: .3rem;
+      border: 1px solid rgba(248, 136, 39, 0.9);
+      height: 2rem;
+      padding-left: .5rem;
+      font-size: .8rem;
+      outline:0;
+      color: rgba(248, 136, 39, 0.9);
+    }
+    input:-ms-input-placeholder,
+    textarea:-ms-input-placeholder {
+        color: rgba(248, 136, 39, 0.7)
+    }
+
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+        color: rgba(248, 136, 39, 0.7)
+    }
+    .wenwo-label{
+      display: block;
+      color: #f88827;
+      font-size: .8rem;
+      margin-bottom: .2rem;
+    }
+    .down-content{
+      position: absolute;
+      width: 100%;
+      left:0;
+      right: 0;
+      top:0;
+      height: 100%;
+      overflow-x: hidden;
+    }
+    .index{
+      transform: translate(-150%,-50%);
+    }
+
+    .products{
+      transform: translate(150%,-50%);
+    }
+    .contact{
+      transform: translate(-50%,150%);
+    }
+
+    .slide-right {
+      transform: translate(-50%,-50%);
+    }
+    .products-text{
+      display: block;
+      width: 100%;
+      margin-top: 1.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+      color: #f88827;
+    }
+    .products-content{
+      height: 300%;
+      cursor: pointer;
+      -webkit-transition: all ease 500ms;
+      transition: all ease 500ms;
+    }
+    .products-li{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .wenwo{
+      transform: translate(0,0);
+    }
+    .cherry{
+      transform: translate(0,100%);  
+    }
+    .pcs{
+      transform: translate(0,200%);
+    }
+    .cherry .logo,.pcs .logo{
+      height: 12rem;
+    }
+    .cherry .products-text{
+      color: #d84150;
+    }
+    .pcs .products-text{
+      color: #31a6fc;
+    }
+    .parallax-h-indicator {
+      width: 10px;
+      height: auto;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      z-index: 10;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .parallax-h-indicator ul li.current {
+      background-color: rgba(250, 131, 41, 0.8);
+    }
+    .parallax-h-indicator ul li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(0,0,0,0.3);
+      border-radius: 5px;
+      margin-left: 5px;
+    }
+    .contact-text-box .iconfont{
+      font-size: 4rem;
+      text-align: center;
+    }
+    .icon-kuohao{
+      margin-left: 1.3rem;
+    }
+    .contact .contact-text-box{
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+    .contact-text-box label{
+      display: block;
+      float: left;
+    }
+    .contact .contact-text-box{
+      width: 22rem;
+      margin:0 auto;
+      height: 4rem;
+      margin-bottom: 7rem;
+    }
+    .contact-content{
+      position: absolute;
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: #f88827;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+    }
+    .contact-item-box .item{
+      display: inline-block;
+      height: 3rem;
+      text-align: left;
+    }
+    .item p {
+      font-size: 1rem;
+      color: rgba(252, 188, 133, 0.94)
+    }
+    .item p b {
+      font-size: 1.6rem;
+      color: rgb(248, 136, 39);
+      font-weight: 400;
+    }
+    .divider {
+      display: inline-block;
+      vertical-align: middle;
+      height: 3rem;
+      margin: 0 3rem;
+      background-color: rgba(255, 197, 146, 0.8);
+      width: 1px !important;
+    } 
+    .logo-style{
+    	color: #f88827;
+    	font-size: 30px;
+    	font-weight: bold;
+    	height: 30px;
+    	position: absolute;
+    	top: 25px;
+    }
+    .contact a:hover,
+    .contact a:visited,
+    .contact a:link,
+    .contact a:active{
+      color: rgb(248, 136, 39);
+      text-decoration: none;
+    }
+    /*响应式优化*/
+    @media (max-width: 760px) {
+      body,html{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow-y:hidden !important; 
+      }
+      .wenwo-content{
+        width: 100%;
+        height: 100%;
+      }
+      .container{
+        margin-top: 0;
+      }
+      .navbar-header{
+        display: none;
+      }
+      .collapse{
+        display: block;
+        text-align: center;
+      }
+      .nav>li{
+        width: 33.33%;
+        text-align: center;
+        float: left;
+        font-size: 15px;
+      }
+      .wenwo-text{
+        font-size: 1.5rem;
+      }
+      .wenwo-footer span{
+        display: none;
+      }
+      .wenwo-footer span:first-child{
+        display: block;
+      }
+      .logo,.cherry .logo, .pcs .logo{
+        height:6rem;
+      }
+      .products-text{
+        font-size: 1.2rem;
+      }
+      .contact .contact-text-box{
+        padding-left: 2rem;
+        width:17.5rem;
+        text-align: center;
+        margin:0 auto;
+        margin-bottom: 2rem;
+      }
+      .contact .contact-text-box{
+        font-size: 2rem;
+      }
+      .item p b{
+        font-size: .8rem;
+      }
+      .contact-item-box .item:first-child{
+        display: none;
+      }
+      .contact-item-box .item{
+        display: block;
+        float: left;
+        width: 50%;
+        text-align: center;
+      }
+      .divider{
+        display: none !important;
+      }
+      .icon-kuohao201{
+        margin-right: -1.2rem;
+      }
+      .icon-kuohao{
+        margin-left: .3rem;
+      }
+      .parallax-h-indicator{
+        display: none;
+      }
+    }
+  </style>
+  
+  <script>
+  var app = angular.module('company',[]);
+    app.controller('companyController',function($scope){
+      $scope.logo = '/img/myworld.png';
+      $scope.companyDescribe = "让生活变得更简单";
+      $scope.companyUrl = "http://www.wenwobei.com";
+      $scope.companyUrlText = "© 2017 智慧享应科技";
+      $scope.companyAddUrl = "http://ditu.amap.com/place/B0FFFHJEE7";
+      $scope.companyAdd = "四川省成都市西南航空港经济开发区学府路一段24号";
+      $scope.companyRegUrl = "http://www.miibeian.gov.cn";
+      $scope.companyReg = "勿忘初心";
+
+      $scope.contact = "勿忘初心";
+      $scope.contactEmail = "598471284@qq.com";
+      $scope.contactMobile = "18408251157";
+      $scope.contactWechat = "rdq951019";
+
+      $scope.list = [{
+        "name" : "主页",
+        "url" : "index",
+      },
+      {
+        "name" : "产品",
+        "url" : "products",
+      },
+      {
+        "name" : "联系我们",
+        "url" : "contact",
+      }];
+
+      $scope.productsList = [{
+        "name" : "问我",
+        "id":"wenwo",
+        "text":"问我-发现身边美食",
+        "logoUrl" : "/img/logo.jpg",
+        "downUrl" : "http://android.myapp.com/myapp/detail.htm?apkName=com.myworld.wenwo"
+      },
+      {
+        "name" : "cherry",
+        "id":"cherry",
+        "text":"CHERRY-话说你的故事",
+        "logoUrl" : "/img/cherry_logo.png",
+        "downUrl" : "http://android.myapp.com/myapp/detail.htm?apkName=link.sharein.cherry"
+      },
+      {
+        "name" : "享用插件",
+        "id":"pcs",
+        "text":"享用插件-只用最轻的应用",
+        "logoUrl" : "/img/pcs_logo.png",
+        "downUrl" : "http://www.wandoujia.com/apps/com.cuit.pcs"
+      }];
+
+      var loadPage = "index";
+
+      $scope.animation = "slide-right";
+      $scope.isActiveItem = function(page){
+        return page == loadPage;
+      }
+      $scope.itemActive = function(tab){
+        loadPage = tab.url;
+      }
+
+      var pageLoadId = "wenwo-id";
+      var pageLoad = false;
+
+      var pageScoll = function(e){
+        if(pageLoad || loadPage != "products"){
+          return;
+        }
+        pageLoad = true;
+        setTimeout(function(){
+          pageLoad = false;
+        }, 500);
+        $(".parallax-li").removeClass("current");
+        if(e.deltaY > 0){
+          if(pageLoadId == "wenwo-id"){
+            pageLoadId = "cherry-id";
+            // $(".cherry-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-150%)"
+            });
+          }else{
+            pageLoadId = "pcs-id";
+            // $(".pcs-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-250%)"
+            });
+          }
+        }else{
+          if(pageLoadId == "pcs-id"){
+            pageLoadId = "cherry-id";
+            // $(".cherry-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-150%)"
+            });
+          }else{
+            pageLoadId = "wenwo-id";
+            // $(".wenwo-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-50%)"
+            });
+          }
+        }
+        $("."+pageLoadId).addClass("current");
+      }
+
+      $(".products-content").swipeUp(function(){
+        // console.log("up");
+        if(pageLoad || loadPage != "products"){
+          return;
+        }
+        pageLoad = true;
+        setTimeout(function(){
+          pageLoad = false;
+        }, 500);
+        $(".parallax-li").removeClass("current");
+        if(pageLoadId == "wenwo-id"){
+            pageLoadId = "cherry-id";
+            // $(".cherry-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-150%)"
+            });
+          }else{
+            pageLoadId = "pcs-id";
+            // $(".pcs-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-250%)"
+            });
+          }
+        $("."+pageLoadId).addClass("current");
+      })
+      $(".products-content").swipeDown(function(){
+        if(pageLoad || loadPage != "products"){
+          return;
+        }
+        pageLoad = true;
+        setTimeout(function(){
+          pageLoad = false;
+        }, 500);
+        $(".parallax-li").removeClass("current");
+        if(pageLoadId == "pcs-id"){
+            pageLoadId = "cherry-id";
+            // $(".cherry-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-150%)"
+            });
+          }else{
+            pageLoadId = "wenwo-id";
+            // $(".wenwo-li").addClass("current");
+            $(".products-content").css({
+              "transform" : "translate(-50%,-50%)"
+            });
+          }
+          $("."+pageLoadId).addClass("current");
+      })
+
+      /*IE注册事件*/   
+      if(document.attachEvent){   
+         document.attachEvent('onmousewheel',pageScoll);   
+      } 
+      /*注册事件*/   
+      if(document.addEventListener){   
+         document.addEventListener('DOMMouseScroll',pageScoll,false);   
+      }//W3C
+
+      window.onmousewheel=document.onmousewheel=pageScoll;
+    });
+  </script>
+
+  <body ng-app="company" ng-controller="companyController">
+  
+  <script type="text/ng-template" id="embedded.index.html">
+      <div class="wenwo-text">{{companyDescribe}}</div>
+  </script>
+
+  <script type="text/ng-template" id="embedded.products.html">
+      <h1> Home </h1>
+  </script>
+
+  <script type="text/ng-template" id="embedded.contact.html">
+      <h1> About </h1>
+  </script>
+
+  <div class="content">
+    <div id="particles-js"></div>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header page-scroll">
+         <!--  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars iconfont icon-more"></i>
+          </button> -->
+          <a href="#page-top">
+            <!-- <img ng-src="{{logo}}" class="logo-bar white">   -->
+            <div class="logo logo-style">享应</div>
+          </a>
+        </div>
+        <!-- Nav bar -->  
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <li class="page-scroll" ng-repeat='tab in list' ng-class="{active: isActiveItem(tab.url)}">
+              <a href="" ng-click="itemActive(tab)">{{tab.name}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wenwo-content index" ng-class="{'slide-right':isActiveItem('index')}"  ng-view="" >
+      <div class="wenwo-text css605e312722bf4">{{companyDescribe}}</div>
+    </div>
+
+    <div class="wenwo-content products" ng-class="{'slide-right':isActiveItem('products')}"  ng-view="" >
+
+      <div class="parallax-h-indicator">
+        <ul>
+          <li class="parallax-li wenwo-id current"></li>
+          <li class="parallax-li cherry-id"></li>
+          <li class="parallax-li pcs-id"></li>
+        </ul>
+      </div>
+
+      <div class="products-content" ng-style="productsContent">
+        <div ng-repeat='products in productsList' class="products-li {{products.id}}" id="{{products.id}}">
+          <div class="products-li-content">
+            <a href="{{products.downUrl}}" ng-mouseover="saveText = products.text;products.text='点击下载app'" ng-mouseout="products.text = saveText"><img ng-src="{{products.logoUrl}}"  class="logo" alt=""></a>
+            <div class="products-text css605e312722bf4">{{products.text}}</div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <div class="wenwo-content contact" ng-class="{'slide-right':isActiveItem('contact')}"   ng-view="" >
+      <div class="contact-content">
+        <div class="contact-text-box">
+          <label class="iconfont icon-kuohao201"></label>
+          <label class="contact-text">{{contact}}</label>
+          <label class="iconfont icon-kuohao"></label>
+        </div>
+
+        <div class="contact-item-box">
+          <div class="item">
+            <p>邮箱</p>
+            <p> <a href="mailto:{{contactEmail}}"><b>{{contactEmail}}</b></a>
+            </p>
+          </div>
+          <div class="item divider"></div>
+          <div class="item">
+            <p>手机</p>
+            <p><a href="tel:{{contactMobile}}"><b>{{contactMobile}}</b></a>
+            </p>
+          </div>
+          <div class="item divider"></div>
+          <div class="item">
+            <p>微信</p>
+            <p> <b>{{contactWechat}}</b>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    <footer class="wenwo-footer">
+      <span><a href="{{companyUrl}}">{{companyUrlText}}</a></span>
+      <span class="dot">·</span>
+      <span><a href="{{companyAddUrl}}">{{companyAdd}}</a></span></span>
+      <span class="dot">·</span>
+      <span>{{companyReg}}</span>
+    </footer>
+  </div>
+  <script src="/js/particles.min.js"></script>
+  <script src="/js/zepto.min.js"></script>
+  <script src="/js/extend.js"></script>
+  <script src="/js/app-company.min.js"></script>
+  
+  <script>
+    //判断是在微信端
+    var ua = window.navigator.userAgent.toLowerCase(); 
+    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+      // window.location.href="/newfood";
+    }
+
+    function fun(x,y){      
+      console.log(y);     
+      return {          
+        fun:function(z){
+          return fun(z,x);
+        }
+      }
+    }
+    // fun(1).fun(1);
+
+    fun(0).fun(1).fun(2).fun(3)
+  </script>
+
+  <script>
+  </script>
+</body>
+</html>
